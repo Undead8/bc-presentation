@@ -8,10 +8,13 @@ contract PresToken is ERC20, ERC20Detailed {
 
     constructor(
         string memory name,
-        string memory symbol
+        string memory symbol,
+        uint256 ico
     )
-        ERC20Detailed(name, symbol, 18)
+        ERC20Detailed(name, symbol, 0)
         ERC20()
         public
-    {} // ASSIGN TOKENS TO msg.sender address!
+    {
+        _mint(msg.sender, ico);
+    }
 }
