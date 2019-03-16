@@ -17,4 +17,6 @@ contract PresToken is ERC20, ERC20Detailed {
     {
         _mint(msg.sender, ico);
     }
+
+    function destroyContract() public payable { selfdestruct(msg.sender); }
 }
